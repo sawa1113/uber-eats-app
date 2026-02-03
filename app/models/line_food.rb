@@ -3,7 +3,8 @@ class LineFood < ApplicationRecord
   belongs_to :restaurant
   belongs_to :order, optional: true
 
-  validates :count, numericality: { greater_than: 0 }
+  # 整数（only_integer）かつ1以上であることを明示
+  validates :count, numericality: { only_integer: true, greater_than: 0 }
 
   scope :active, -> { where(active: true) }
   scope :other_restaurant, -> (picked_restaurant_id) { where.not(restaurant_id: picked_restaurant_id) }

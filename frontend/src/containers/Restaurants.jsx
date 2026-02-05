@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 // components
-import Skeleton from '@material-ui/lab/Skeleton';
+import { Skeleton } from '@mui/material';
 
 // apis
 import { fetchRestaurants } from '../apis/restaurants';
